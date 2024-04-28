@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./static/fonts/Montserrat-ExtraLight.ttf') format('truetype');
+    src: url('./static/fonts/Montserrat-LightItalic.ttf') format('truetype');
+    src: url('./static/fonts/Montserrat-Regular.ttf') format('truetype');
+    src: url('./static/fonts/Montserrat-ThinItalic.ttf') format('truetype');
+}
+
+:root {
+    --primary-dark-mode: #004643;
+    --primary-light-mode: #f2f7f5;
+    --header-dark-mode: #fffffe;
+    --header-light-mode: #00473e;
+    --p-dark-mode: #abd1c6;
+    --p-light-mode: #475d5b;
+    --link-color: #f9bc60;
+}
+
+
+
+
+
+
+
+  

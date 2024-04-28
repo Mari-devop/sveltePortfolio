@@ -1,0 +1,308 @@
+<script>
+    import ArrowAbout from '../../components/ArrowAbout.svelte';
+  
+</script>
+
+<ArrowAbout />
+
+<h1 style="position: absolute;">
+    <span class="word1" style="font-size: 18rem; position:relative; left:4rem; top: -8rem; ">Front</span>
+    <span class="word2" style="font-size: 3rem; position:relative;left:-13rem; top: -12rem; color: #00473da2; letter-spacing: 4rem; background-color: #f2f7f5; ">End</span>
+    <span class="moving-text" style="font-size: 10rem; position:relative; top: 5rem; left: 0rem; color:  #00473d5a; ">Developer</span>
+</h1>
+
+<dl class="text-animation">
+    <dt>I possess</dt>
+    <dd>Creating adaptive and responsive layouts</dd>
+    <dd>Implementing interactive features and animations</dd>
+    <dd>Optimizing the performance of web applications</dd>
+    <dd>Developing the features based on provided User stories</dd>
+    <dd>Building reusable UI components</dd>
+    <dd>Working closely with designers to implement their designs</dd>
+</dl>
+
+<div class='stage-cube-cont'>
+    <div class='cubespinner'>
+    <div class="face1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32" {...$$props}>
+            <path fill="#ff3e00" d="M26.47 5.7a8.973 8.973 0 0 0-11.793-2.454L7.96 7.4a7.461 7.461 0 0 0-3.481 5.009a7.686 7.686 0 0 0 .8 5.058a7.358 7.358 0 0 0-1.151 2.8a7.789 7.789 0 0 0 1.4 6.028a8.977 8.977 0 0 0 11.794 2.458L24.04 24.6a7.468 7.468 0 0 0 3.481-5.009a7.673 7.673 0 0 0-.8-5.062a7.348 7.348 0 0 0 1.152-2.8A7.785 7.785 0 0 0 26.47 5.7" />
+            <path fill="#fff" d="M14.022 26.64A5.413 5.413 0 0 1 8.3 24.581a4.678 4.678 0 0 1-.848-3.625a4.307 4.307 0 0 1 .159-.61l.127-.375l.344.238a8.76 8.76 0 0 0 2.628 1.274l.245.073l-.025.237a1.441 1.441 0 0 0 .271.968a1.63 1.63 0 0 0 1.743.636a1.512 1.512 0 0 0 .411-.175l6.7-4.154a1.366 1.366 0 0 0 .633-.909a1.407 1.407 0 0 0-.244-1.091a1.634 1.634 0 0 0-1.726-.622a1.509 1.509 0 0 0-.413.176l-2.572 1.584a4.934 4.934 0 0 1-1.364.582a5.415 5.415 0 0 1-5.727-2.06a4.678 4.678 0 0 1-.831-3.628A4.507 4.507 0 0 1 9.9 10.09l6.708-4.154a4.932 4.932 0 0 1 1.364-.581A5.413 5.413 0 0 1 23.7 7.414a4.679 4.679 0 0 1 .848 3.625a4.272 4.272 0 0 1-.159.61l-.127.375l-.344-.237a8.713 8.713 0 0 0-2.628-1.274l-.245-.074l.025-.237a1.438 1.438 0 0 0-.272-.968a1.629 1.629 0 0 0-1.725-.622a1.484 1.484 0 0 0-.411.176l-6.722 4.14a1.353 1.353 0 0 0-.631.908a1.394 1.394 0 0 0 .244 1.092a1.634 1.634 0 0 0 1.726.621a1.538 1.538 0 0 0 .413-.175l2.562-1.585a4.9 4.9 0 0 1 1.364-.581a5.417 5.417 0 0 1 5.728 2.059a4.681 4.681 0 0 1 .843 3.625a4.5 4.5 0 0 1-2.089 3.013l-6.707 4.154a4.9 4.9 0 0 1-1.364.581" />
+        </svg>
+    </div>
+    <div class="face2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32" {...$$props}>
+            <circle cx="16" cy="15.974" r="2.5" fill="#00d8ff" />
+            <path fill="#00d8ff" d="M16 21.706a28.385 28.385 0 0 1-8.88-1.2a11.3 11.3 0 0 1-3.657-1.958A3.543 3.543 0 0 1 2 15.974c0-1.653 1.816-3.273 4.858-4.333A28.755 28.755 0 0 1 16 10.293a28.674 28.674 0 0 1 9.022 1.324a11.376 11.376 0 0 1 3.538 1.866A3.391 3.391 0 0 1 30 15.974c0 1.718-2.03 3.459-5.3 4.541a28.8 28.8 0 0 1-8.7 1.191m0-10.217a27.948 27.948 0 0 0-8.749 1.282c-2.8.977-4.055 2.313-4.055 3.2c0 .928 1.349 2.387 4.311 3.4A27.21 27.21 0 0 0 16 20.51a27.6 27.6 0 0 0 8.325-1.13C27.4 18.361 28.8 16.9 28.8 15.974a2.327 2.327 0 0 0-1.01-1.573a10.194 10.194 0 0 0-3.161-1.654A27.462 27.462 0 0 0 16 11.489" />
+            <path fill="#00d8ff" d="M10.32 28.443a2.639 2.639 0 0 1-1.336-.328c-1.432-.826-1.928-3.208-1.327-6.373a28.755 28.755 0 0 1 3.4-8.593a28.676 28.676 0 0 1 5.653-7.154a11.376 11.376 0 0 1 3.384-2.133a3.391 3.391 0 0 1 2.878 0c1.489.858 1.982 3.486 1.287 6.859a28.806 28.806 0 0 1-3.316 8.133a28.385 28.385 0 0 1-5.476 7.093a11.3 11.3 0 0 1-3.523 2.189a4.926 4.926 0 0 1-1.624.307m1.773-14.7a27.948 27.948 0 0 0-3.26 8.219c-.553 2.915-.022 4.668.75 5.114c.8.463 2.742.024 5.1-2.036a27.209 27.209 0 0 0 5.227-6.79a27.6 27.6 0 0 0 3.181-7.776c.654-3.175.089-5.119-.713-5.581a2.327 2.327 0 0 0-1.868.089A10.194 10.194 0 0 0 17.5 6.9a27.464 27.464 0 0 0-5.4 6.849Z" />
+            <path fill="#00d8ff" d="M21.677 28.456c-1.355 0-3.076-.82-4.868-2.361a28.756 28.756 0 0 1-5.747-7.237a28.676 28.676 0 0 1-3.374-8.471a11.376 11.376 0 0 1-.158-4A3.391 3.391 0 0 1 8.964 3.9c1.487-.861 4.01.024 6.585 2.31a28.8 28.8 0 0 1 5.39 6.934a28.384 28.384 0 0 1 3.41 8.287a11.3 11.3 0 0 1 .137 4.146a3.543 3.543 0 0 1-1.494 2.555a2.59 2.59 0 0 1-1.315.324m-9.58-10.2a27.949 27.949 0 0 0 5.492 6.929c2.249 1.935 4.033 2.351 4.8 1.9c.8-.465 1.39-2.363.782-5.434A27.212 27.212 0 0 0 19.9 13.74a27.6 27.6 0 0 0-5.145-6.64c-2.424-2.152-4.39-2.633-5.191-2.169a2.327 2.327 0 0 0-.855 1.662a10.194 10.194 0 0 0 .153 3.565a27.465 27.465 0 0 0 3.236 8.1Z" />
+        </svg>
+    </div>
+    <div class="face3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}>
+            <g fill="none">
+                <g clip-path="url(#akarIconsReduxFill0)">
+                    <path fill="#5e30eb" d="M16.63 16.563c.885-.092 1.557-.863 1.527-1.788a1.723 1.723 0 0 0-1.71-1.665h-.062c-.947.03-1.68.832-1.65 1.788c.032.463.215.863.49 1.14c-1.039 2.067-2.627 3.577-5.01 4.841c-1.618.864-3.298 1.172-4.977.956c-1.375-.185-2.444-.802-3.116-1.819c-.977-1.51-1.068-3.145-.244-4.779c.58-1.171 1.497-2.035 2.077-2.466a16.987 16.987 0 0 1-.397-1.573C-.871 14.436-.412 18.814.93 20.88c1.008 1.542 3.054 2.498 5.315 2.498a7.45 7.45 0 0 0 1.832-.216c3.91-.77 6.872-3.114 8.552-6.598m5.375-3.823c-2.321-2.744-5.742-4.255-9.651-4.255h-.489a1.677 1.677 0 0 0-1.496-.925h-.062c-.946.031-1.68.833-1.649 1.789c.03.925.794 1.664 1.71 1.664h.062a1.721 1.721 0 0 0 1.496-1.048h.55c2.321 0 4.52.678 6.505 2.004c1.527 1.018 2.627 2.343 3.237 3.947c.52 1.294.49 2.558-.06 3.638c-.856 1.634-2.291 2.528-4.185 2.528c-1.221 0-2.382-.37-2.993-.648a18.07 18.07 0 0 1-1.374 1.11c1.313.617 2.657.956 3.94.956c2.932 0 5.1-1.634 5.925-3.268c.885-1.788.824-4.871-1.466-7.492M6.49 17.087c.03.925.794 1.665 1.71 1.665h.061c.947-.03 1.68-.832 1.65-1.788a1.723 1.723 0 0 0-1.71-1.665h-.062a.53.53 0 0 0-.214.03c-1.252-2.096-1.771-4.377-1.588-6.844c.122-1.85.733-3.453 1.802-4.779c.886-1.14 2.596-1.695 3.757-1.726c3.237-.062 4.611 4.008 4.703 5.642c.397.092 1.069.308 1.527.462C17.759 3.09 14.706.5 11.773.5C9.025.5 6.49 2.504 5.482 5.464c-1.405 3.946-.489 7.738 1.222 10.729c-.153.216-.245.555-.214.894" />
+                </g>
+                <defs>
+                    <clipPath id="akarIconsReduxFill0">
+                        <path fill="#fff" d="M0 0h24v24H0z" />
+                    </clipPath>
+                </defs>
+            </g>
+        </svg>
+    </div>
+    <div class="face4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32" {...$$props}>
+            <path fill="#e44f26" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30z" />
+            <path fill="#f1662a" d="m16 27.858l8.17-2.265l1.922-21.532H16z" />
+            <path fill="#ebebeb" d="M16 13.407h-4.09l-.282-3.165H16V7.151H8.25l.074.83l.759 8.517H16zm0 8.027l-.014.004l-3.442-.929l-.22-2.465H9.221l.433 4.852l6.332 1.758l.014-.004z" />
+            <path fill="#fff" d="M15.989 13.407v3.091h3.806l-.358 4.009l-3.448.93v3.216l6.337-1.757l.046-.522l.726-8.137l.076-.83h-.833zm0-6.256v3.091h7.466l.062-.694l.141-1.567l.074-.83z" />
+        </svg>
+    </div>
+    <div class="face5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32" {...$$props}>
+            <path fill="#cd6799" d="M16.171 18.7c-.481.221-1.008.509-2.063 1.088c-.4.225-.818.45-1.207.662c-.027-.027-.055-.061-.082-.089c-2.087-2.23-5.947-3.805-5.783-6.8c.061-1.091.436-3.955 7.413-7.433c5.742-2.83 10.311-2.046 11.1-.307c1.134 2.479-2.449 7.092-8.379 7.761a4.469 4.469 0 0 1-3.751-.948c-.314-.341-.361-.361-.477-.293c-.191.1-.068.409 0 .586a3.5 3.5 0 0 0 2.141 1.684a11.4 11.4 0 0 0 6.956-.689c3.594-1.391 6.4-5.258 5.578-8.5c-.825-3.287-6.281-4.371-11.443-2.537a26 26 0 0 0-8.79 5.047c-2.844 2.66-3.294 4.972-3.11 5.94c.662 3.437 5.4 5.674 7.3 7.331c-.1.055-.184.1-.259.143c-.948.471-4.562 2.36-5.463 4.358c-1.023 2.264.164 3.887.948 4.105a5.832 5.832 0 0 0 6.281-2.544a6.3 6.3 0 0 0 .559-5.8a5.03 5.03 0 0 1 .716-.477c.484-.286.945-.568 1.354-.786a10.475 10.475 0 0 1 4.475-.989c3.246.382 3.887 2.407 3.764 3.26a2.157 2.157 0 0 1-1.03 1.459c-.225.143-.3.191-.28.293c.027.15.136.143.327.116a2.535 2.535 0 0 0 1.766-2.257c.1-2-1.807-4.194-5.183-4.174a7.753 7.753 0 0 0-2.946.587q-.225.093-.437.2Zm-4.825 7.839c-1.078 1.173-2.578 1.616-3.226 1.241c-.7-.4-.423-2.135.9-3.376a17.18 17.18 0 0 1 2.53-1.889c.157-.1.389-.232.668-.4l.075-.041l.164-.1a4.658 4.658 0 0 1-1.111 4.565" />
+        </svg>
+    </div>
+    <div class="face6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32" {...$$props}>
+            <path fill="#44a8b3" d="M9 13.7q1.4-5.6 7-5.6c5.6 0 6.3 4.2 9.1 4.9q2.8.7 4.9-2.1q-1.4 5.6-7 5.6c-5.6 0-6.3-4.2-9.1-4.9q-2.8-.7-4.9 2.1m-7 8.4q1.4-5.6 7-5.6c5.6 0 6.3 4.2 9.1 4.9q2.8.7 4.9-2.1q-1.4 5.6-7 5.6c-5.6 0-6.3-4.2-9.1-4.9q-2.8-.7-4.9 2.1" />
+        </svg>
+    </div>
+
+    </div>
+
+</div>
+
+
+<style>
+
+    dl {
+        font-size: 1.5rem;
+        margin-top: 15rem;
+        margin-left: 10rem;
+        padding: 2rem;
+        width: 80%;
+        color:  #00473da2;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, 
+                    rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, 
+                    rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, 
+                    rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px,
+                    rgb(255, 85, 85) 40px -40px;
+    }
+
+    dt {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .moving-text {
+      font-size: 10rem;
+      position: relative;
+   
+      left: 0rem;
+      color: #00473d5a;
+      animation: moveRightToLeft 7s linear infinite; 
+    }
+
+    @keyframes moveRightToLeft {
+      0% {
+        left: 100%;
+      }
+      100% {
+        left: -100%; 
+      }
+    }
+
+    .stage-cube-cont {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        perspective: 1000px;
+        top: -18rem;
+        right: -25rem;
+    }
+
+    .cubespinner {
+        animation-name: spincube;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 12s;
+        transform-style: preserve-3d;
+        transform-origin: 100px 100px 0;
+        margin-left: calc(50% - 100px);
+        
+    }
+    div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 1px solid aliceblue;
+        background: rgba(255, 255, 255, 0.4);
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 20px 0px lightgoldenrodyellow;
+    }
+
+    .face1 {
+        transform: translateZ(100px);
+        color: #dd0031;
+      }
+      .face2 {
+        transform: rotateY(90deg) translateZ(100px);
+        color: #f06529;
+      }
+      .face3 {
+        transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+        color: #28a4d9;
+      }
+      .face4 {
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+        color: #5ed4f4;
+      }
+      .face5 {
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+        color: #efd81d;
+      }
+      .face6 {
+        transform: rotateX(-90deg) translateZ(100px);
+        color: #ec4d28;
+      }
+
+
+
+@keyframes spincube {
+    from,
+    to {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    16% {
+        transform: rotateY(-90deg);
+    }
+
+    33% {
+        transform: rotateY(-90deg) roteteZ(90deg);
+    }
+    50% {
+        transform: rotateY(-180deg) roteteZ(90deg);
+    }
+    66% {
+        transform: rotateY(-270deg) roteteZ(90deg);
+    }
+    83% {
+        transform: rotateX(90deg)
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width: 1250px){
+  .stage-cube-cont {
+    display: none;
+  }
+}
+
+.text-animation dd {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.text-animation dd:nth-child(1) {
+  animation: fadeIn 0.5s ease 0.5s forwards;
+}
+
+.text-animation dd:nth-child(2) {
+  animation: fadeIn 0.5s ease 1s forwards;
+}
+
+.text-animation dd:nth-child(3) {
+  animation: fadeIn 0.5s ease 1.5s forwards;
+}
+
+.text-animation dd:nth-child(4) {
+  animation: fadeIn 0.5s ease 2s forwards;
+}
+
+.text-animation dd:nth-child(5) {
+  animation: fadeIn 0.5s ease 2.5s forwards;
+}
+
+.text-animation dd:nth-child(6) {
+  animation: fadeIn 0.5s ease 3s forwards;
+}
+
+.text-animation dd:nth-child(7) {
+  animation: fadeIn 0.5s ease 3.5s forwards;
+}
+@media screen and (max-width: 768px){
+
+  .word1 {
+   display: none;
+  }
+
+  .word2 {
+    display: none;
+  }
+
+  dl {
+    font-size: 1rem;
+    margin-top: 5rem;
+    margin-left: 5rem;
+    padding: 1rem;
+    width: 60%;
+    color:#9bcfc8;
+    box-shadow: #9bcfc8 0px 0px 0px 2px inset, 
+                    #c9e6e2 10px -10px 0px -2px, 
+                    #0a675b 10px -10px, 
+                    #a0d1cb 20px -20px 0px -3px, 
+                    #0a675b 20px -20px,
+                    #8fbcb7 30px -30px 0px -3px, 
+                    #0a675b  30px -30px, 
+                    #73a29c 40px -40px 0px -3px, 
+                    #00473e 40px -40px;
+  }
+
+  .stage-cube-cont {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+ 
+  .word1 {
+    display: none;
+  }
+
+  dl {
+    font-size: 1rem;
+    margin-top: 5rem;
+    margin-left: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .moving-text {
+    font-size: 5rem;
+    top: 0;
+  }
+
+  .stage-cube-cont {
+    display: none;
+  }
+}
+
+</style>
