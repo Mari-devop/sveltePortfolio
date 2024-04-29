@@ -266,33 +266,42 @@
         margin-right: 1rem;
     }
 
+    @media screen and (max-width: 1278px) {
+        button[type="submit"] {
+            margin-top: -20rem;
+            margin-right: 2rem;
+        }
+        hr {
+            max-width: 80%;
+        }
+    }
+
+
     @media screen and (max-width: 768px){
         form {
             padding-left: 2rem;
         }
-
         img {
             margin-left: 2rem;
         }
-
         h2 {
             margin-left: 2rem;
         }
-
         hr {
             margin-left: 2rem;
             max-width: 100%;
         }
     }
-
-    @media screen and (max-width: 1278px) {
+    @media screen and (max-width: 540px){
         button[type="submit"] {
-            
             margin-top: -20rem;
-            
+            margin-right: 2rem;
+        }
+        hr {
+            margin-left: 2rem;
+            max-width: 80%;
         }
     }
-
     @media screen and (max-width: 500px) {
         button[type="submit"] {
             height: 5rem;
@@ -300,8 +309,28 @@
             margin-top:-18rem;
             font-size: 1rem;
             padding: 1rem 1rem;
+        }
+        hr {
+            margin-left: 2rem;
+            max-width: 80%;
+        }
+    }
+    @media screen and (max-width: 414px){
+        h2 {
+            font-size: 2rem;
+        }
+        hr {
+            margin-top: 3rem;
+        }
+        input, textarea {
+            max-width: 60%;
+        }
+        textarea {
+            height: 2rem;
+        }
+        button[type="submit"] {
+            margin-top: -16rem;
             
         }
-        
     }
 </style>

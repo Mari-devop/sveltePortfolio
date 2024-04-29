@@ -120,21 +120,14 @@
 </script>
 
 <ArrowProjects />
-
-<h2 style="position: absolute;">
-    <span  style="font-size: 6rem; font-family: 'Impact', Charcoal, sans-serif; position: relative;">Crafting</span> 
-    <span class="word" style="font-size: 7rem; font-family: 'Bangers', cursive; position: relative; left: 8rem; top: 2rem;">advanced</span> 
-    <span class="word2" style="font-size: 10rem; font-family: 'Stencil', fantasy; color: #abd1c6; position: relative; left: 14rem;">digital</span>
-    <span  style="font-size: 6.5rem; font-family: 'Rock Salt', cursive; position: relative; top: 6rem; left: 0rem;">solutions</span>
-</h2>
-
-<h3>
-    Crafting
-    advanced
-    digital
-    solutions
-</h3>
-
+    <div class="wrapper">
+        <h2>
+            <span  style="font-size: 6rem; font-family: 'Impact', Charcoal, sans-serif;">Crafting</span> 
+            <span class="word" style="font-family: 'Bangers', cursive;">advanced</span> 
+            <span class="word2" style="font-family: 'Stencil', fantasy; color: #abd1c6;">digital</span>
+            <span class="word3" style="font-family: 'Rock Salt', cursive;">solutions</span>
+        </h2>
+    </div>
 
     <div class="container">
         <div class="left-bnt filter">
@@ -150,124 +143,58 @@
         </div>
     </div>
 
-
-
-<table>
-    <tbody>
-        {#each $filteredProjects as project}
-            <tr data-category={project.category}>
-                <td style="font-size: 24px;">
-                    <a href={project.url} target="_blank">{project.title}</a>
-                </td>
-                <td style="font-size: 15px">{project.tech}</td>
-                <td style="font-size: 12px">{project.year}</td>
-            </tr>
-        {/each}
-    </tbody>
-</table>
+    <table>
+        <tbody>
+            {#each $filteredProjects as project}
+                <tr data-category={project.category}>
+                    <td style="font-size: 15px;">
+                        <a href={project.url} target="_blank">{project.title}</a>
+                    </td>
+                    <td style="font-size: 15px">{project.tech}</td>
+                    <td style="font-size: 12px">{project.year}</td>
+                </tr>
+            {/each}
+        </tbody>
+    </table>
 
 <style>
-    h3 {
-    display: none;
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        max-width: 90%;   
+        color: #f9bc60;
     }
-   h2 {
-    text-align: left;
-    margin: 5% 5%; 
-    font-size: 7vw;
-    font-family: 'Roboto', sans-serif;
-}
 
-.word {
-    position: absolute;
-}
-
-.word2 {
-    position: absolute;
-}
-
-
-@media screen and (max-width: 768px) {
     h2 {
-        display: none;
-    }
-    
-    h3 {
-        transition: opacity 0.5s ease;
-        display: flex;
-        flex-wrap: wrap;
-        text-align: center;
-        font-size: 5rem;
-        font-family: 'Roboto', sans-serif;
-        margin-top: 1rem ;
-        color: #f9a528d0;
-        margin: 3rem;
-        box-shadow: #9bcfc8 0px 0px 0px 2px inset, 
-                    #c9e6e2 10px -10px 0px -2px, 
-                    #0a675b 10px -10px, 
-                    #a0d1cb 20px -20px 0px -3px, 
-                    #0a675b 20px -20px,
-                    #8fbcb7 30px -30px 0px -3px, 
-                    #0a675b  30px -30px, 
-                    #73a29c 40px -40px 0px -3px, 
-                    #00473e 40px -40px;
-
-        animation: fadeIn 2s ease;
+        text-align: left;
+        padding-left: 10rem;
+        font-size: 7vw;
     }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+    h2 .word {
+        font-size: 7rem;
     }
 
-    
+    h2 .word2 {
+        font-size: 10rem;
+    }
 
-    .container {
-        display: flex;
-        position: relative;
-        top: -25rem;
-       
+    h2 .word3 {
+        font-size: 6.5rem;
     }
 
     table {
         width: 90%;
         border-collapse: collapse;
         margin: 0 auto;
-        position: relative;
-        top: -25rem; 
     }
-}
-
-@media screen and (max-width: 480px) {
-    h2 {
-        display: none;
-    }
-
-    h3 {
-        display: flex;
-        flex-wrap: wrap;
-        text-align: center;
-        font-size: 5rem;
-        font-family: 'Roboto', sans-serif;
-        margin-top: 1rem ;
-    }
-
-    .container {
-        display: flex;
-        position: relative;
-        top: -14rem;
-    }
-}
 
     .container {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        margin: 50px;
-        margin-top: 30rem;
+        padding-left: 10rem;
+        padding-bottom: 5rem;
     }
 
     .left-bnt {
@@ -314,6 +241,79 @@
         text-decoration: none;
         
     }
- 
+    @media screen and (max-width: 1062px) {
+        h2 .word2 {
+                font-size: 5rem;
+        }
+    }
+
+    @media screen and (max-width: 1005px) {
+    h2 .word {
+            font-size: 4rem;
+    }
+    }
+
+    @media screen and (max-width: 817px) {
+        h2 .word3 {
+            font-size: 5rem;
+        }
+    }
+
+    @media screen and (max-width: 807px) {
+        .wrapper {
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            padding-left: 5rem;
+        }
+        .container {
+            padding-left: 8rem;
+        }
+    }
+
+    @media screen and (max-width: 716px) {
+        .container {
+            justify-content: center;
+            padding-left: 0;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .container {
+            padding-left: 2rem;
+        }
+        
+    }
+    
+
+
+    @media screen and (max-width: 320px) {
+        h2 {
+            padding-left: 6rem;
+        }
+        .container {
+            padding-left: 5rem;
+        }
+    }
+
+    
+    @media screen and (max-width: 290px) {
+        h2 {
+            padding-left: 7rem;
+        }
+        .container {
+            padding-left: 6rem;
+        }
+    }
+
+    @media screen and (max-width: 290px) {
+        h2 {
+            padding-left: 10rem;
+        }
+        .container {
+            padding-left: 8rem;
+        }
+    }
  
 </style>

@@ -25,6 +25,7 @@
         box-sizing: border-box;
         background-color: #f2f7f5;
         margin-top: 4rem;
+        max-width: 100%;
     }
 
     p {
