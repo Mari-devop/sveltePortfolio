@@ -88,6 +88,20 @@
             "tech": "HTML, CSS, Svelte",
             "url": "https://mari-devop.github.io/svelte-sub/",
             "year": 2023
+        },
+        {
+            "title": "Restaurant",
+            "category": "development",
+            "tech": "HTML, CSS, React JS",
+            "url": "https://mari-devop.github.io/restik/",
+            "year": 2024
+        },
+        {
+            "title": "Image gallery",
+            "category": "development",
+            "tech": "HTML, CSS, React JS",
+            "url": "https://mari-devop.github.io/gallery/",
+            "year": 2024
         }
         
     ])
