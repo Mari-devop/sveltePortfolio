@@ -1,9 +1,7 @@
 <script>
-    import Navbar from '../components/Navbar.svelte';
     import '../styles/variables.css';
 </script>
 
-<Navbar />
 <slot />
 
 <style>
