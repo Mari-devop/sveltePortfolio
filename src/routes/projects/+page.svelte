@@ -1,333 +1,428 @@
 <script lang="ts">
-    import ArrowProjects from '../../components/ArrowProjects.svelte';
-	import { readable, writable, derived } from 'svelte/store';
+  import { projects } from '../../configs/projects';
+  import ArrowProject from '../../components/ArrowProjects.svelte';
+  import Icon from '../../components/Icon.svelte';
+  import Github from '../../icons/Github.svelte';
+  import ArrowLeft from '../../icons/ArrowLeft.svelte';
+  import ArrowRight from '../../icons/ArrowRight.svelte';
+  import Switcher from '../../components/About/Switcher.svelte';
+  import React from '../../icons/React.svelte';
+  import Svelte from '../../icons/Svelte.svelte';
+  import Html from '../../icons/Html.svelte';
+  import Css from '../../icons/Css.svelte';
+  import Sass from '../../icons/Sass.svelte';
+  import Bootstrap from '../../icons/Bootstrap.svelte';
+  import Tailwind from '../../icons/Tailwind.svelte';
+  import Mui from '../../icons/Mui.svelte';
+  import JS from '../../icons/JS.svelte';
 
+  let toggledItem: string | null = null;
+  let currentProjectIndex = 0;
 
+  const handleToggle = (event: CustomEvent<{ name: string; isToggled: boolean }>) => {
+    toggledItem = event.detail.isToggled ? event.detail.name : null;
+    currentProjectIndex = 0;
+  };
 
-    const projects = readable([
-        { 
-            "title": "Responsive buildings",
-            "category": "styling",
-            "tech": "HTML, CSS",
-            "url": "https://mari-devop.github.io/building_project/",
-            "year": 2023
-        },
-        { 
-            "title": "Funny pinguin",
-            "category": "styling",
-            "tech": "HTML, CSS",
-            "url": "https://mari-devop.github.io/pinguin_project/",
-            "year": 2023
-        },
-        { 
-            "title": "Capybara",
-            "category": "styling",
-            "tech": "HTML, CSS",
-            "url": "https://mari-devop.github.io/capibars_LP/#life",
-            "year": 2023
-        },
-        { 
-            "title": "Note App",
-            "category": "development",
-            "tech": "HTML, CSS, JS",
-            "url": "https://mari-devop.github.io/note_project/",
-            "year": 2023
-        },
-        { 
-            "title": "Recipes",
-            "category": "styling",
-            "tech": "HTML, CSS",
-            "url": "https://mari-devop.github.io/grandpa_recipes/index.html",
-            "year": 2023
-        },
-        {
-            "title": "Weather App",
-            "category": "development",
-            "tech": "HTML, CSS, React JS",
-            "url": "https://mari-devop.github.io/weather-ap/",
-            "year": 2023
-        },
-        {
-            "title": "Landing Page 1",
-            "category": "styling",
-            "tech": "HTML, CSS",
-            "url": "https://mari-devop.github.io/workit-landing-page/",
-            "year": 2023
-        },
-        {
-            "title": "Landing Page 2",
-            "category": "styling",
-            "tech": "HTML, CSS",
-            "url": "https://mari-devop.github.io/skilled-landing-page/",
-            "year": 2023
-        },
-        {
-            "title": "Landing Page 3",
-            "category": "styling",
-            "tech": "HTML, CSS",
-            "url": "https://mari-devop.github.io/equalizer-landing-page/",
-            "year": 2023
-        },
-        {
-            "title": "Simple subscription form",
-            "category": "development",
-            "tech": "HTML, CSS, JS",
-            "url": "https://mari-devop.github.io/Pod-request-access-landing-page/?mail=dfghj%40g.com",
-            "year": 2023
-        },
-        {
-            "title": "Landing page 4",
-            "category": "styling",
-            "tech": "HTML, CSS",
-            "url": "https://mari-devop.github.io/meet-landing-page/",
-            "year": 2023
-        },
-        {
-            "title": "Review App",
-            "category": "development",
-            "tech": "HTML, CSS, Svelte",
-            "url": "https://mari-devop.github.io/svelte-sub/",
-            "year": 2023
-        },
-        {
-            "title": "Restaurant",
-            "category": "development",
-            "tech": "HTML, CSS, React JS",
-            "url": "https://mari-devop.github.io/restik/",
-            "year": 2024
-        },
-        {
-            "title": "Image gallery",
-            "category": "development",
-            "tech": "HTML, CSS, React JS",
-            "url": "https://mari-devop.github.io/gallery/",
-            "year": 2024
-        }
-        
-    ])
+  $: filteredProjects = toggledItem
+    ? projects.filter(project => project.switcher === toggledItem)
+    : projects;
 
-    const filter = writable({ category: 'all' });
+  const prevProject = () => {
+    if (filteredProjects.length > 0) {
+      currentProjectIndex = (currentProjectIndex - 1 + filteredProjects.length) % filteredProjects.length;
+      console.log('Updated Index:', currentProjectIndex);
+    }
+  };
 
-    const filteredProjects = derived(
-        [filter, projects], ([$filter, $projects]) => {
-            if ($filter.category == 'all') {
-                return $projects;
-            }
-
-            return $projects.filter(project => project.category === $filter.category);
-        }
-    );
-
-    const categories = [
-        {
-            "title": 'all'
-        }, 
-        {
-            "title": 'styling'
-        },
-        {
-            "title": 'development'
-        }
-    ];
-
-    
+  const nextProject = () => {
+    if (filteredProjects.length > 0) {
+      currentProjectIndex = (currentProjectIndex + 1) % filteredProjects.length;
+      console.log('Updated Index:', currentProjectIndex);
+    }
+  };
 </script>
 
-<ArrowProjects />
-    <div class="wrapper">
-        <h2>
-            <span  style="font-size: 6rem; font-family: 'Impact', Charcoal, sans-serif;">Crafting</span> 
-            <span class="word" style="font-family: 'Bangers', cursive;">advanced</span> 
-            <span class="word2" style="font-family: 'Stencil', fantasy; color: #abd1c6;">digital</span>
-            <span class="word3" style="font-family: 'Rock Salt', cursive;">solutions</span>
-        </h2>
+<div class="ps-project-page">
+  <ArrowProject />
+  <div class="ps-project-page__grid">
+    <div class="ps-project-page__grid-content">
+      <div class="ps-project-page__arrow-btns">
+        <button on:click={prevProject}>
+          <Icon name="arrowLeft" width={30} height={30}>
+            <ArrowLeft />
+          </Icon>
+        </button>
+        <button on:click={nextProject}>
+          <Icon name="arrowRight" width={30} height={30}>
+            <ArrowRight />
+          </Icon>
+        </button>
+      </div>
+      <div class="ps-project-page__projects">
+        {#if filteredProjects.length > 0}
+          <div class="ps-project-page__item">
+            <div class="ps-project-page__item-image">
+              <img src={filteredProjects[currentProjectIndex].image} alt={filteredProjects[currentProjectIndex].title} />
+            </div>
+            <div class="ps-project-page__item-text">
+              <h2>{filteredProjects[currentProjectIndex].title}</h2>
+              <p>{filteredProjects[currentProjectIndex].description}</p>
+              <div class="ps-project-page__item-links">
+                <a href={filteredProjects[currentProjectIndex].url} target="_blank">Live!</a>
+                <a href={filteredProjects[currentProjectIndex].github} target="_blank" rel="noopener noreferrer" class="ps-popup__github">
+                  <Icon name="github" width={40} height={40}>
+                    <Github />
+                  </Icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        {:else}
+          <p>No projects available</p>
+        {/if}
+      </div>
     </div>
-
-    <div class="container">
-        <div class="left-bnt filter">
-            {#each categories as category}
-                <button 
-                    class="filter-btn" 
-                    class:active={$filter.category == category.title}
-                    on:click={() => $filter.category = category.title}
-                >
-                    {category.title}
-                </button>
-            {/each}
+    <div class="ps-project-page__grid-buttons">
+      <div class="ps-project-page__stack-btns">
+        <div class="ps-stack__icon-item js">
+          <Switcher name="JS" icon={JS} toggledClass="is-toggled-js" isToggleable={true} toggled={toggledItem === 'JS'} on:toggle={handleToggle} />
         </div>
+        <div class="ps-stack__icon-item svelte">
+          <Switcher name="Svelte" icon={Svelte} toggledClass="is-toggled-svelte" isToggleable={true} toggled={toggledItem === 'Svelte'} on:toggle={handleToggle} />
+        </div>
+        <div class="ps-stack__icon-item react">
+          <Switcher name="React" icon={React} toggledClass="is-toggled-react" isToggleable={true} toggled={toggledItem === 'React'} on:toggle={handleToggle} />
+        </div>
+        <div class="ps-stack__icon-item html">
+          <Switcher name="HTML" icon={Html} toggledClass="is-toggled-html" isToggleable={true} toggled={toggledItem === 'HTML'} on:toggle={handleToggle} />
+        </div>
+      </div>
+      <div class="ps-project-page__styles-btns">
+        <div class="ps-stack__icon-item css">
+          <Switcher name="CSS" icon={Css} toggledClass="is-toggled-css" isToggleable={true} toggled={toggledItem === 'CSS'} on:toggle={handleToggle} />
+        </div>
+        <div class="ps-stack__icon-item sass">
+          <Switcher name="Sass" icon={Sass} toggledClass="is-toggled-sass" isToggleable={true} toggled={toggledItem === 'Sass'} on:toggle={handleToggle} />
+        </div>
+        <div class="ps-stack__icon-item bootstrap">
+          <Switcher name="Bootstrap" icon={Bootstrap} toggledClass="is-toggled-bootstrap" isToggleable={true} toggled={toggledItem === 'Bootstrap'} on:toggle={handleToggle} />
+        </div>
+        <div class="ps-stack__icon-item tailwind">
+          <Switcher name="Tailwind" icon={Tailwind} toggledClass="is-toggled-tailwind" isToggleable={true} toggled={toggledItem === 'Tailwind'} on:toggle={handleToggle} />
+        </div>
+        <div class="ps-stack__icon-item mui">
+          <Switcher name="MUI" icon={Mui} toggledClass="is-toggled-mui" isToggleable={true} toggled={toggledItem === 'MUI'} on:toggle={handleToggle} />
+        </div>
+      </div>
     </div>
-
-    <table>
-        <tbody>
-            {#each $filteredProjects as project}
-                <tr data-category={project.category}>
-                    <td style="font-size: 15px;">
-                        <a href={project.url} target="_blank">{project.title}</a>
-                    </td>
-                    <td style="font-size: 15px">{project.tech}</td>
-                    <td style="font-size: 12px">{project.year}</td>
-                </tr>
-            {/each}
-        </tbody>
-    </table>
+  </div>
+</div>
 
 <style>
-    .wrapper {
-        display: flex;
-        justify-content: center;
-        max-width: 90%;   
-        color: #f9bc60;
+  .ps-project-page {
+    padding: 1vw 7vw;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    height: 100vh;
+  }
+
+  .ps-project-page__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, auto);
+    gap: 1vw;
+    height: fit-content;
+    background-color: #f5f5dc;
+    border-radius: 10px;
+    padding: 2vw;
+    margin: 1vw;
+  }
+
+  .ps-project-page__grid-content {
+    grid-column: 1;
+  }
+
+  .ps-project-page__grid-buttons {
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+    margin: 1vw;
+  }
+
+  .ps-project-page__stack-btns,
+  .ps-project-page__styles-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+  }
+
+  .ps-project-page__arrow-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+  }
+
+  .ps-project-page__arrow-btns button {
+    background-color: #fff8dc;
+    border: 2px solid #8b4513;
+    border-radius: 50%;
+    padding: 0.5vw;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .ps-project-page__arrow-btns button:hover {
+    background-color: #d2691e;
+    transform: scale(1.1);
+  }
+
+  .ps-project-page__projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+  }
+
+  .ps-project-page__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff8dc;
+    padding: 1vw;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #8b4513;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ps-project-page__item h2 {
+    color: #8b4513;
+    font-size: 1.5em;
+    margin-bottom: 0.5vw;
+  }
+
+  .ps-project-page__item p {
+    color: #333;
+    font-size: 1em;
+  }
+
+  .ps-project-page__item-links {
+    display: flex;
+    gap: 1vw;
+    margin-top: 1vw;
+  }
+
+  .ps-project-page__item-links a {
+    color: #8b4513;
+    text-decoration: none;
+    border: 2px solid #8b4513;
+    padding: 0 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .ps-project-page__item-links a:hover {
+    background-color: #8b4513;
+    color: #fff;
+  }
+
+  .ps-project-page__item-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #8b4513;
+    margin-right: 1vw;
+  }
+
+  .ps-project-page__item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ps-project-page__item-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 1vw;
+  }
+
+  .ps-stack__icon-item {
+    background-color: #ffebcd;
+    border-radius: 50px;
+    width: 140px;
+    padding: 7px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(104, 85, 45, 0.2) 0px -3px 0px inset;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .ps-stack__icon-item:hover {
+    background-color: #f08080;
+    transform: scale(1.1);
+  }
+
+  .ps-stack__icon-item.js,
+  .ps-stack__icon-item.svelte,
+  .ps-stack__icon-item.react,
+  .ps-stack__icon-item.html,
+  .ps-stack__icon-item.css,
+  .ps-stack__icon-item.sass,
+  .ps-stack__icon-item.bootstrap,
+  .ps-stack__icon-item.tailwind, 
+  .ps-stack__icon-item.mui {
+    background-color: #ffebcd;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .ps-project-page__item {
+      flex-direction: column;
+      gap: 1vw;
+    }
+    .ps-project-page__item-text {
+      width: 100%;
+      padding: 1vw;
+    }
+    .ps-project-page__item-image {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .ps-project-page {
+      padding: 3vw 3vw;
     }
 
-    h2 {
-        text-align: left;
-        padding-left: 10rem;
-        font-size: 7vw;
+    .ps-project-page__grid {
+      flex-direction: column;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
     }
 
-    h2 .word {
-        font-size: 7rem;
+    .ps-project-page__grid-buttons {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3vw;
+      margin: 1vw;
     }
 
-    h2 .word2 {
-        font-size: 10rem;
+    .ps-project-page__stack-btns,
+    .ps-project-page__styles-btns {
+      display: flex;
+      flex-direction: row;
+      gap: 1vw;
     }
 
-    h2 .word3 {
-        font-size: 6.5rem;
+    .ps-project-page__grid-content {
+      grid-column: 1;
+      grid-row: 2;
+      width: 100%;
     }
 
-    table {
-        width: 90%;
-        border-collapse: collapse;
-        margin: 0 auto;
+    .ps-project-page__item {
+      flex-direction: column;
+      gap: 1vw;
+      width: 100%;
     }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        padding-left: 10rem;
-        padding-bottom: 5rem;
+    .ps-project-page__item-image {
+      width: 100%;
+      height: auto;
     }
 
-    .left-bnt {
-        display: flex;
+    .ps-project-page__item-text {
+      width: 100%;
     }
 
-    .left-bnt button {
-        background-color: #abd1c6;
-        border: none;
-        padding: 10px 20px;
-        margin-right: 10px;
-        border-radius: 5px;
-        font-size: medium;
-        box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
-                    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
-        cursor: pointer;
-        
+    .ps-project-page__grid-buttons {
+      width: 100%;
     }
 
-    .left-bnt button.active {
-        background-color: #f9bc60;
+    .ps-project-page__stack-btns, .ps-project-page__styles-btns {
+      width: 100%;
+      justify-content: center;
     }
 
-    button:hover {
-        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
-        filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+    .ps-stack__icon-item {
+      width: auto;
+      padding: 5px;
     }
+  }
+  @media screen and (max-width: 420px) {
+  .ps-project-page__grid {
+    padding: 1vw;
+    gap: 0.5vw;
+  }
 
-    table {
-        width: 90%;
-        border-collapse: collapse;
-        margin: 0 auto;
-    }
+  .ps-project-page__grid-buttons {
+    flex-direction: column;
+    gap: 1vw;
+  }
 
-    td {
-        border-bottom: 1px solid #ddd;
-        padding: 2rem;
-        text-align: center;
-        font-size: 1.5rem;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;                
-    }
+  .ps-stack__icon-item {
+    width: 100%;
+    padding: 3px;
+    font-size: 0.8em;
+  }
 
-    a {
-        text-decoration: none;
-        
-    }
-    @media screen and (max-width: 1062px) {
-        h2 .word2 {
-                font-size: 5rem;
-        }
-    }
+  .ps-project-page__item {
+    padding: 0.5vw;
+  }
 
-    @media screen and (max-width: 1005px) {
-    h2 .word {
-            font-size: 4rem;
-    }
-    }
+  .ps-project-page__arrow-btns button {
+    padding: 0.3vw;
+    font-size: 0.8em;
+  }
 
-    @media screen and (max-width: 817px) {
-        h2 .word3 {
-            font-size: 5rem;
-        }
-    }
+  .ps-project-page__item h2 {
+    font-size: 1.2em;
+  }
 
-    @media screen and (max-width: 807px) {
-        .wrapper {
-            width: 100%;
-        }
-        h2 {
-            text-align: center;
-            padding-left: 5rem;
-        }
-        .container {
-            padding-left: 8rem;
-        }
-    }
+  .ps-project-page__item p {
+    font-size: 0.9em;
+  }
 
-    @media screen and (max-width: 716px) {
-        .container {
-            justify-content: center;
-            padding-left: 0;
-        }
-    }
+  .ps-project-page__item-links a {
+    padding: 0 0.3vw;
+    font-size: 0.8em;
+  }
 
-    @media screen and (max-width: 500px) {
-        .container {
-            padding-left: 2rem;
-        }
-        
-    }
-    
+  .ps-project-page__item-image {
+    height: 200px;
+    margin-right: 0.5vw;
+  }
+}
+  @media screen and (max-width: 385px) {
+  .ps-project-page__grid-buttons {
+    flex-direction: row;
+    gap: 10vw;
+  }
+  .ps-project-page__stack-btns {
+    flex-direction: column;
+    width: 30%;
+  }
+  .ps-project-page__styles-btns {
+    flex-direction: column;
+    width: 30%;
+  }
 
-
-    @media screen and (max-width: 320px) {
-        h2 {
-            padding-left: 6rem;
-        }
-        .container {
-            padding-left: 5rem;
-        }
-    }
-
-    
-    @media screen and (max-width: 290px) {
-        h2 {
-            padding-left: 7rem;
-        }
-        .container {
-            padding-left: 6rem;
-        }
-    }
-
-    @media screen and (max-width: 290px) {
-        h2 {
-            padding-left: 10rem;
-        }
-        .container {
-            padding-left: 8rem;
-        }
-    }
- 
+  
+}
 </style>

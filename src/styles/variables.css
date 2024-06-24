@@ -1,0 +1,17 @@
+:root {
+    --main-bg-color: hsl(160, 4%, 85%);
+    --secondary-bg-color: #eaf6f1;
+    --main-text-color: #f9bc60;
+    --secondary-text-color: #004643;
+    --main-border-color: #0b5955;
+    --accent-color: #f9bc60;
+    --icon-color: #004643;
+    --icon-hover-color: #f9bc60;
+    --dark-bg-color: #013b38;
+    --secondary-dark-bg-color: #265754;
+    --dark-text-color: #748c85;
+    --icon-dark-color: #abd1c6;
+    --icon-dark-hover-color: #f2f7f5;
+  
+  
+}
